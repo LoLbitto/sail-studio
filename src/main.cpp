@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <windows.h>
+#include <cstdlib>
 
 #define A 220
 #define B 246
@@ -11,7 +12,7 @@
 #define G 392
 
 int main() {
-    std::cout << "11 Wow Sail Studio is real!!!";
+    std::cout << "11 Wow Sail Studio is real!!!\n";
 
     int escolha = 0;
     int modo = 0;
@@ -75,11 +76,44 @@ int main() {
 		case 'g':
 		    Beep(G, 500);
 		    break;
+		case 't': // t de tempo
+		    Beep(0, 500);
+		    break;
 		case '8':
-		    modo = 0;
+		    modo = 2;
 		    break;
 		}	
 
+	    }
+	} else if (modo == 2) {
+	    std::cout << "modo infinito, fecha a janela para sair";
+	    while (true) {
+		switch (std::rand() % 8) {
+		case 1:
+		    Beep(A, std::rand() % 1000);
+		    break;
+		case 2:
+		    Beep(B, std::rand() % 1000);
+		    break;
+		case 3:
+		    Beep(C, std::rand() % 1000);
+		    break;
+		case 4:
+		    Beep(D, std::rand() % 1000);
+		    break;
+		case 5:
+		    Beep(E, std::rand() % 1000);
+		    break;
+		case 6:
+		    Beep(F, std::rand() % 1000);
+		    break;
+		case 7:
+		    Beep(G, std::rand() % 1000);
+		    break;
+		case 8:
+		    Beep(0, std::rand() % 1000);
+		    break;
+	    }
 	    }
 	}
     } while (escolha != 0);
