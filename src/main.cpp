@@ -5,6 +5,8 @@
 #include <QWidget>
 #include <QApplication>
 #include <QPushButton>
+#include <QEvent>
+#include <QObject>
 
 #define A 220
 #define B 246
@@ -13,6 +15,10 @@
 #define E 329
 #define F 349
 #define G 392
+
+class SailorsWindow : public QApplication {
+    
+};
 
 int main(int argc, char **argv) {
     QApplication app (argc, argv);
