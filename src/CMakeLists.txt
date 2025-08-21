@@ -1,1 +1,6 @@
-ADD_EXECUTABLE(sst main.cpp)
+ADD_EXECUTABLE(SailStudio main.cpp)
+
+FIND_PACKAGE(Qt6 COMPONENTS Core Widgets REQUIRED)
+
+TARGET_LINK_LIBRARIES(SailStudio PRIVATE Qt6::Core Qt6::Widgets)
+

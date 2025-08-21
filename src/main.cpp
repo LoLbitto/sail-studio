@@ -2,6 +2,9 @@
 #include <string.h>
 #include <windows.h>
 #include <cstdlib>
+#include <QWidget>
+#include <QApplication>
+#include <QPushButton>
 
 #define A 220
 #define B 246
@@ -11,7 +14,18 @@
 #define F 349
 #define G 392
 
-int main() {
+int main(int argc, char **argv) {
+    QApplication app (argc, argv);
+    
+    QPushButton button;
+    button.setText("My text");
+    button.setToolTip("A tooltip");
+    button.show();
+
+    return app.exec();
+}
+
+void terminal_music() {
     std::cout << "11 Wow Sail Studio is real!!!\n";
 
     int escolha = 0;
@@ -90,33 +104,31 @@ int main() {
 	    while (true) {
 		switch (std::rand() % 8) {
 		case 1:
-		    Beep(A, std::rand() % 1000);
+		    Beep(A, std::rand() % 1000 / std::rand() % 10);
 		    break;
 		case 2:
-		    Beep(B, std::rand() % 1000);
+		    Beep(B, std::rand() % 1000 / std::rand() % 10);
 		    break;
 		case 3:
-		    Beep(C, std::rand() % 1000);
+		    Beep(C, std::rand() % 1000 / std::rand() % 10);
 		    break;
 		case 4:
-		    Beep(D, std::rand() % 1000);
+		    Beep(D, std::rand() % 1000 / std::rand() % 10);
 		    break;
 		case 5:
-		    Beep(E, std::rand() % 1000);
+		    Beep(E, std::rand() % 1000 / std::rand() % 10);
 		    break;
 		case 6:
-		    Beep(F, std::rand() % 1000);
+		    Beep(F, std::rand() % 1000 / std::rand() % 10);
 		    break;
 		case 7:
-		    Beep(G, std::rand() % 1000);
+		    Beep(G, std::rand() % 1000 / std::rand() % 10);
 		    break;
 		case 8:
-		    Beep(0, std::rand() % 1000);
+		    Beep(0, std::rand() % 1000 / std::rand() % 10);
 		    break;
-	    }
+		}
 	    }
 	}
     } while (escolha != 0);
-    
-    return 0;
 }
